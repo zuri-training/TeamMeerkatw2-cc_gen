@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Rest framework
+    'rest_framework',
+    
+    # My apps
     'ccdesigns',
 ]
 
