@@ -1,0 +1,81 @@
+{% extends 'index.html' %} 
+{% load static %}
+{% block style %}
+
+{% endblock style %}
+{% block content %}
+<div class="container register-page" >
+{% include 'nav.html' %}
+<div class="content-container">
+            <div class="image">
+                <img src="{% static 'images\register-image.png' %}" alt="">
+            </div>
+            <div class="content">
+                <h1 class="header-text">NEW USER? CREATE AN ACCOUNT</h1>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {% comment %}
+                    {% for field in form %}
+                    {{field.label}}
+                    {{field}}
+                    {% endfor %} {% endcomment %}
+                    
+                    <div class="input-container">
+                        
+                        <div class="input">
+                            <label for="Fname">FIRST NAME</label>
+                            <input type="text" name="Fname" id="Fname" placeholder="Enter your first name">
+                        </div>
+                        <div class="input">
+                            <label for="Lname">LAST NAME</label>
+                            <input type="text" name="Lname" id="Lname" placeholder="Enter your last name">
+                        </div>
+                        <div class="input">
+                            <label for="tel">USERNAME</label>
+                            <input type="text" name="username" id="username">
+                        </div>
+                        <div class="input">
+                            <label for="email"><img src="{% static 'images/lock.svg' %}" alt="">EMAIL ADDRESS</label>
+                            <input type="email" name="email" id="email" placeholder="xxxx@email.com">
+                        </div>
+                        <div class="input">
+                            <label for="password1"><img src="{% static 'images/lock.svg' %}" alt="">PASSWORD</label>
+                            <input type="password" name="password1" id="password1" placeholder="Enter a new Password">
+                        </div>
+                        <div class="input">
+                            <label for="password2"><img src="{% static 'images/lock.svg' %}" alt="">PASSWORD</label>
+                            <input type="password" name="password2" id="password2"
+                                placeholder="Repeat the new password">
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <div>
+                            <input type="checkbox" name="checkbox" id="checkbox" required>
+                            <label for="checkbox">I agree to the <a href="">Terms and Conditions</a></label>
+                        </div>
+                        {% if messages %}
+                        <div class="messages">
+                            {% for message in messages %}
+                            <div{% if message.tags %} class="{{ message.tags }}"{% endif %}><img style="width: 20px; height:20px; margin: 0 5px" src="{% static  'images\icons8-error-50.png' %}">{{ message }}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <input type="submit" value="Sign up">
+                    <div class="horizontal-line">
+                        <span class="line"></span><span class="or">or</span><span class="line"></span>
+                    </div>
+                    <p>Sign up using:</p>
+                    <div class="links">
+                        <a href="" class="google"><img src="{% static 'images/logos_google-icon.svg' %}" alt="">Google</a>
+                        <a class="apple" href=""><img src="{% static 'Images/apple-logo.svg' %}" alt=""> Apple</a>
+                    </div>
+                    <div class="create-account">
+                        <span>Already have an account?</span><a href="{% url 'login' %}">Login</a>
+                    </div> 
+                </form>
+                
+            </div>
+        </div>
+    </div>
+{% endblock content %}

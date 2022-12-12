@@ -1,0 +1,21 @@
+{% load static %}
+<div class="nav-container">
+    <div class="logo">
+        <div class="logo-container">
+            <h1>cc_gen</h1>
+            <img src="{% static '\images\Vector.png' %}" alt="logo">
+        </div>
+    </div>
+    <div>
+        <ul class="nav">
+            <li><a href="">About us</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+    {% if request.user.is_authenticated  %}
+    <a class="signup" href="{% url 'logout' %}">log-out</a>
+    {% else %}
+    <a class="signup" href="{% url 'login' %}">login</a>
+    {% endif %}
+</div>
