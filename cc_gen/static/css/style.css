@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Roboto:wght@400;700&display=swap");
+
+.login-page {
+    background: url("../images/Group642.png") no-repeat;
+}
+
+.register-page {
+    background: url("../images/Register-background.png") no-repeat;
+}
+
+.container {
+    height: 100vh;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    padding: 0 40px;
+    background: #03045e;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    width: 222px;
+    height: 76px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 202px;
+    height: 56px;
+}
+
+.logo-container h1 {
+    width: 152px;
+    height: 56px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: #ffffff;
+}
+
+.lang {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 2px;
+    width: 52px;
+    height: 15px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 70px;
+    width: 408px;
+    height: 28px;
+}
+
+.nav li {
+    list-style: none;
+}
+
+.nav a {
+    width: 97px;
+    height: 28px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.signup {
+    padding: 10px 25px;
+    width: 118px;
+    height: 43px;
+    border: 1.5px solid #ffffff;
+    border-radius: 20px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-text {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #03034e;
+}
+
+.content {
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    width: 100%;
+    max-width: 715px;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.input-container .input {
+    width: 47%;
+    height: 60px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 80px;
+    background: #eeefef;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.input input {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #555a62;
+    border: none;
+    background: inherit;
+}
+input:focus{
+    border: none;
+    background: inherit;
+}
+
+.input label {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    font-variant: small-caps;
+    color: #000000;
+}
+
+label img {
+    margin: 0 5px;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    height: 22px;
+    margin: 10px 0;
+}
+
+.checkbox a {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+    color: #0077b6;
+}
+
+.checkbox label {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.horizontal-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    height: 19px;
+}
+
+.line {
+    width: 40%;
+    height: 0px;
+    border: 1px solid #000000;
+}
+
+.or {
+    width: 16px;
+    height: 19px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.btn {
+    padding: 30px 10px;
+    height: 88px;
+    background: #5053bd;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 20px 0;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #ffffff;
+}
+
+.content p {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0px;
+    height: 62px;
+}
+
+.links a {
+    padding: 8px;
+    width: 40%;
+    height: 62px;
+    border: 1px solid #02033f;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.google img {
+    margin: 0 5px;
+    vertical-align: -5px;
+}
+
+.google {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 50px;
+    color: #000000;
+}
+
+.apple {
+    background: #000814;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 40px;
+    color: #ffffff;
+    border: 1px solid #000000;
+}
+
+.apple img {
+    vertical-align: -3px;
+}
+
+
+.create-account {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    width: 50%;
+    height: 62px;
+    border: 1px solid #02033f;
+    border-radius: 20px;
+    margin: 30px auto;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.create-account a {
+    text-decoration: none;
+    color: #0077b6;
+    margin: 0 2px;
+}
+
+.messages div {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration: none;
+    color: #e40606;
+}
+
+.reset-password {
+    position: absolute;
+    padding: 20px;
+    width: 400px;
+    height: 284px;
+    left: 40%;
+    top: 40%;
+    background: #eeefef;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.eye-icon {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 0;
+}

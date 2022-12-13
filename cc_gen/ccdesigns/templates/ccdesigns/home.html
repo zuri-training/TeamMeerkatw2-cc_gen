@@ -1,8 +1,167 @@
 {% extends 'index.html' %}
 {% load static %}
-{% block content %}
+<link rel="stylesheet" href="{% static 'home.css' %}">{% block content %}
 <div class="container">
     {% include 'nav.html' %}
+  <main class="main-content">
+    <section class="hero">
+      <div class="profile-text width">
+        <h1>Make Your Card as Unique as You</h1>
+        <p>create,customize and generate credit cards that suits your personality and makes designing more fun at a
+          discounted rate.</p>
+        <a class="button">Get Started</a>
+        <a class="linkss linkss2">Explore Card Design</a>
+      </div>
+      <div class="hero-image width">
+        <img src="{% static 'images/c-removebg 1.png' %}" alt="">
+      </div>
+      <div class="ccl-container">
+        <div class="ccl">
+          <div class="s-clients">
+            <p class="b-p">500K+</p>
+            <p class="s-p">Satisfied Client</p>
+          </div>
+          <div class="c-cards">
+            <p class="b-p">250K+</p>
+            <p class="s-p">Customized Cards</p>
+          </div>
+          <div class="l-cost">
+            <p class="b-p">40%</p>
+            <p class="s-p">Lower cost</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About us sections -->
+    <section class="aboutus" id="about-us">
+      <h2 class="header">About Us</h2>
+      <div class="aboutus-flex">
+        <div class="aboutus-item">
+          <img src="{% static 'images/card.png' %}" alt="project1">
+        </div>
+        <div class="aboutus-text">
+          CC_gen 2022, is a library of different credit card designs that gives access to credit card customization to
+          authenticated and unauthenticated users, with the basic features of interacting, saving and downloading
+          designs as well
+          as and sharing credit card designs to different social media platforms.
+          <div>
+            <a class="button" href="">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="partners">
+        <h2 class="header">Our Trusted Partners</h2>
+        <div class="mastercard">
+          <img src="{% static 'images/Rectangle 8.svg' %}" alt="">
+        </div>
+        <div class="gooogle" sty>
+          <img src="{% static 'images/Rectangle 9.svg' %}" alt="">
+        </div>
+        <div class="paypal">
+          <img src="{% static 'images/Rectangle 11.svg' %}" alt="">
+        </div>
+        <div class="visa">
+          <img src="{% static 'images/visa-logo-2 1.svg' %}" alt="">
+        </div>
+        <div class="discover">
+          <img src="{% static 'images/Frame 6042.svg' %}" alt="">
+        </div>
+      </div>
+    </section>
+    <section class="card-designs">
+      <h2>Card designs</h2>
+      <P>Explore various credit card designs</P>
+      <div class="cards">
+
+        <div>
+          <a href="" class="button">Explore more designs</a>
+        </div>
+      </div>
+    </section>
+    <section class="review">
+      <h2 class="header">Clients Review</h2>
+      <div class="box">
+        <div><img class="avatar" src="{% static 'images/img_avatar.png' %}" alt=""></div>
+        <p>Great design features, user friendly, affordable rate of payment for services and unlimited ways to customize
+          credit
+          cards.</p>
+        <p><b>Kwame, Ghana</b></p>
+
+      </div>
+      <div class="box">
+        <div><img class="avatar" src="{% static 'images/img_avatar.png' %}" alt=""></div>
+        <p>An awesome platform to design, learn and collaborate with amazing easy to use features</p>
+        <p><b>chris, Nigeria</b></p>
+
+      </div>
+      <div class="box">
+        <div><img class="avatar" src="{% static 'images/img_avatar2.png' %}" alt=""></div>
+        <p>As a beginner in design , it gives me the platform to create friendly user interfaces of credit cards designs
+          with
+          ease..</p>
+        <p><b>Aisha, Abuja</b></p>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="newsletter-container">
+      <div class="newsletter">
+        <h2 class="newsletter-header">Our Newsletter</h2>
+        <p class="newsletter-text">Subscribe to our newsletter to get more information about our products and amazing
+          offers.</p>
+        <form .subscribe method="POST">
+          <input type="email" name="email" id="email" class="email"placeholder="Email">
+          <input class="subscribe-btn" type="submit" value="Subcribe">
+        </form>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h2 class="header">CC_gen</h2>
+      <div style="display: flex; justify-content: space-around;">
+        <div class="about-links hg">
+          <P class="p-tag">About</P>
+          <ul>
+            <li><a href="">Join our team</a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="">Partners</a></li>
+          </ul>
+        </div>
+        <div class="legal hg">
+          <p class="p-tag">Legal</p>
+          <ul>
+            <li><a href="">Terms</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Copy Right</a></li>
+          </ul>
+        </div>
+        <div class="support hg">
+          <p class="p-tag">Support</p>
+          <ul>
+            <li><a href="">Contact us</a></li>
+            <li><a href="">Publisher</a></li>
+            <li><a href="">Help/FAQs</a></li>
+            <li><a href="">Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="social-links hg">
+          <p class="p-tag">Quicklinks</p>
+          <ul>
+            <li><a href=""><img src="{% static 'images/social icons/Group.svg' %}" alt="">Facebook</a></li>
+            <li><a href=""><img src="{% static 'images/social icons/akar-icons_instagram-fill.svg' %}" alt="">Instagram</a></li>
+            <li><a href=""><img src="{% static 'images/social icons/akar-icons_twitter-fill.svg' %}" alt="">Twitter</a></li>
+            <li><a href=""><img src="{% static 'images/social icons/jam_behance-circle.svg' %}" alt="">Behance</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <p class="p-tag lg">Copyright © 2022-2023 CC_Gen Ltd (Nigeria). All Rights Reserved</p>
+    </div>
+  </footer>
+  </div>
+
+  </div>
 </div>
 
 {% endblock content %}

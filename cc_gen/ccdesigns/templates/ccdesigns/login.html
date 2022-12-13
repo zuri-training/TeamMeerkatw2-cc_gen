@@ -12,15 +12,18 @@
     </div>
     <div class="content">
         <h1 class="header-text">WELCOME BACK, SIGN IN</h1>
-        <form method= "POST" action="">
+        <form class="form" method= "POST" action="">
             {% csrf_token %}
             <div class="input">
-                <label for="email"><img src="{% static 'images\lock.svg' %}" alt="">EMAIL ADDRESS</label>
-                <input type="text" name="username" id="username" placeholder="xxxx@email.com">
+                <label for="email"><img src="{% static 'images\lock.svg' %}" alt="">USERNAME</label>
+                <input type="text" name="username" id="username" placeholder="username">
             </div>
             <div class="input">
                 <label for="password"><img src="{% static 'images\lock.svg' %}" alt="">PASSWORD</label>
-                <input type="password" name="password" id="password" placeholder="Password">
+                <div style="position: relative;">
+                <input style="width: 100%;" type="password" name="password" id="password" placeholder="Password">
+                <img src="{% static 'images/eye.svg' %}" class="eye-icon" alt="">
+                </div>
             </div>
             {% if messages %}
                         <div class="messages">
@@ -36,13 +39,13 @@
                 </div>
                 <a href="{% url 'password_reset' %}" class="forgot-password">Forgot Password?</a>
             </div>
-            <input type="submit" value="Log in">
+            <input type="submit" class="btn" value="Log in">
             <div class="horizontal-line">
                 <span class="line"></span><span class="or">or</span><span class="line"></span>
             </div>
             <p>Sign up using:</p>
             <div class="links">
-                <a href="" class="google"><img src="{% static 'images\logos_google-icon.svg' %}" alt="">Google</a>
+                <a href="{% url 'social:begin' 'google-oauth2' %}" class="google"><img src="{% static 'images\logos_google-icon.svg' %}" alt="">Google</a>
                 <a class="apple" href=""><img src="{% static 'images\apple-logo.svg' %}" alt=""> Apple</a>
             </div>
             <div class="create-account">

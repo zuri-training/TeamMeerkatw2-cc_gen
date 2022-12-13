@@ -12,7 +12,7 @@
             </div>
             <div class="content">
                 <h1 class="header-text">NEW USER? CREATE AN ACCOUNT</h1>
-                <form method="POST" action="">
+                <form  class="form" method="POST" action="">
                     {% csrf_token %}
                     {% comment %}
                     {% for field in form %}
@@ -40,12 +40,17 @@
                         </div>
                         <div class="input">
                             <label for="password1"><img src="{% static 'images/lock.svg' %}" alt="">PASSWORD</label>
-                            <input type="password" name="password1" id="password1" placeholder="Enter a new Password">
+                            <div style="position: relative;">
+                            <input type="password" name="password1" id="password1" style="width: 100%;" placeholder="Enter a new Password">
+                            <img src="{% static 'images/eye.svg' %}" class="eye-icon" alt="">
+                            </div>
                         </div>
                         <div class="input">
                             <label for="password2"><img src="{% static 'images/lock.svg' %}" alt="">PASSWORD</label>
-                            <input type="password" name="password2" id="password2"
-                                placeholder="Repeat the new password">
+                            <div style="position: relative;">
+                            <input type="password" style="width: 100%;" name="password2" id="password2" placeholder="Repeat the new password">
+                            <img src="{% static 'images/eye.svg' %}" class="eye-icon" alt="">
+                            </div>
                         </div>
                     </div>
                     <div class="checkbox">
@@ -61,7 +66,7 @@
                         </div>
                         {% endif %}
                     </div>
-                    <input type="submit" value="Sign up">
+                    <input type="submit" class="btn" value="Sign up">
                     <div class="horizontal-line">
                         <span class="line"></span><span class="or">or</span><span class="line"></span>
                     </div>

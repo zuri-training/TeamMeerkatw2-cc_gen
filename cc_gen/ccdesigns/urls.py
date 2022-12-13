@@ -30,4 +30,5 @@ urlpatterns = [
              template_name='ccdesigns/password-reset/password_reset_complete.html'
          ),
          name='password_reset_complete'),
+    
 ]
