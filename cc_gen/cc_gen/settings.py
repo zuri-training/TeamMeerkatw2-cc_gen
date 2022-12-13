@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     
     # My apps
     'ccdesigns',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -138,6 +139,9 @@ STATICFILES_DIRS = [
     BASE_DIR, 'static'
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEADIA_URL = '/media/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -156,3 +160,4 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '947147053125-uvco3vj9h438q382rvqc8c2eiabdurg7.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 LOGIN_REDIRECT_URL = 'home'
+

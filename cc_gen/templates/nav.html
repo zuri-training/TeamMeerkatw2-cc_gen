@@ -17,7 +17,7 @@
     <div>
     {% if request.user.is_authenticated  %}
     <a class="signup" href="{% url 'logout' %}">log-out</a>
-    <a href=""> <img class="avatar mg-l" src="{% static 'images/avatar2.png' %}" alt=""></a>
+    <a href="{% url 'profile-page' %}"> <img class="avatar mg-l" src="{{ user.profile.image.url}}" alt=""></a>
     {% else %}
     <a class="signup" href="{% url 'login' %}">login</a>
     {% endif %}

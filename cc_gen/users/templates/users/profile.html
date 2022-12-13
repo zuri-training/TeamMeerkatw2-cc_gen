@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'nav.html' %}
+<div>
+    <div>
+    <img class="avatar" src="{{ user.profile.image.url}}"
+    </div>
+    <div>
+        <h3>{{user.username}}</h3>
+        <p>{{user.email}}</p>
+    </div>
+</div>
+<div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{u_form}}
+        {{p_form}}
+        <input type="submit" value="Update">
+    </form>
+</div>
+
+
+{% endblock content %}
+
+
