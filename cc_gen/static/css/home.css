@@ -18,13 +18,13 @@
 body {
         margin: 0px;
         padding: 0px;
-        background: #F5F5F5;
         scroll-behavior: smooth;
 }
 
 .main-content {
         display: flex;
         flex-direction: column;
+        background-color: #F5F5F5;
         background: url('../images/Group641.svg') no-repeat;
 }
 
@@ -54,7 +54,6 @@ body {
         padding: 0 50px;
         flex-wrap: wrap;
         width: 100%;
-        height: 100vh;
 }
 
 .hero-image {
@@ -67,6 +66,7 @@ body {
 }
 
 .linkss {
+        text-decoration: none;
         border-radius: 10px;
         text-align: center;
         display: inline-block;
@@ -76,24 +76,14 @@ body {
         font-size: 24px;
         margin: 30px 20px;
         padding: 15px 20px;
-        box-shadow: 0px 6px black;
         color: #03045E;
         border: 2px solid #03045E;
         background-color: none;
         transition: 0.1s;
 }
 
-.linkss:active {
-        box-shadow: 0px 3px black;
-        transform: translateY(4px);
-}
-
-.linkss2 {
-        box-shadow: 0px 6px black;
-        color: #03045E;
-        border: 2px solid #03045E;
-        border-radius: 10px;
-        background-color: none;
+.linkss:hover {
+        box-shadow: inset 1px 5px 2px rgba(0, 0, 0, 0.3);
 }
 
 .ccl-container {
@@ -151,7 +141,8 @@ body {
 }
 
 .aboutus {
-        height: 100vh;
+
+        padding: 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -168,6 +159,7 @@ body {
 }
 
 .aboutus-flex {
+        padding: 50px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -196,6 +188,8 @@ body {
 }
 
 .button {
+
+        border: 2px solid #03045E;
         border-radius: 10px;
         text-align: center;
         text-decoration: none;
@@ -204,17 +198,15 @@ body {
         font-style: normal;
         font-weight: 400;
         font-size: 24px;
-        margin: 20px 0;
+        margin: 20px 10px;
         padding: 15px 20px;
         background: #03045E;
         color: white;
-        box-shadow: 8px 10px black;
         transition: 0.1s;
 }
 
-.button:active {
-        box-shadow: 5px 5px black;
-        transform: translateY(4px);
+.button:hover {
+        border: 2px solid #FFFFFF;
 }
 
 .partners {
@@ -242,9 +234,8 @@ body {
 }
 
 .card-designs {
-        height: 100vh;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         /* justify-content: ; */
         font-family: 'Roboto';
         font-style: normal;
@@ -254,6 +245,7 @@ body {
 }
 
 .card-designs p {
+        width: 100%;
         font-size: 24px;
         line-height: 23px;
         color: #03045E;
@@ -261,13 +253,30 @@ body {
 }
 
 .card-designs h2 {
+        width: 100%;
         color: #03045E;
         font-size: 84px;
         line-height: 40px;
 }
 
 .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
         width: 100%;
+}
+
+.c_card {
+        border-radius: 12px;
+        transform: scale(1);
+        transition: 0.5s;
+}
+
+.c_card:hover {
+        transform: scale(1.1);
+        box-shadow: 3px 4px 11px 0px rgba(0, 0, 0, 0.75);
+        border-radius: 12px;
 }
 
 .header {
@@ -286,6 +295,7 @@ body {
         height: 100px;
         border-radius: 50%;
 }
+
 .mg-l {
         margin-left: 20px;
         width: 50px;
@@ -293,6 +303,8 @@ body {
 }
 
 .review {
+        border-top: 5px solid #03034E;
+        margin-top: 50px;
         height: 100vh;
         display: flex;
         flex-wrap: wrap;
@@ -322,7 +334,6 @@ body {
 }
 
 .footer {
-        height: 100vh;
         background-color: #03045E;
 }
 
@@ -330,7 +341,6 @@ body {
         width: 100%;
         height: 25%;
         background: #F5F5F5;
-        ;
 }
 
 .newsletter-header {
@@ -347,9 +357,8 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 0px;
+        padding: 20px;
         max-width: 519px;
-        height: 152px;
 }
 
 .newsletter-text {
@@ -379,6 +388,7 @@ body {
         font-weight: 700;
         font-size: 16px;
         color: white;
+        cursor: pointer;
         position: absolute;
         right: 0;
         top: 0;
@@ -400,7 +410,6 @@ body {
 .footer-links .header {
         color: white;
         text-align: initial;
-        margin: 0;
         width: 100%;
 }
 
@@ -446,4 +455,44 @@ body {
         font-size: 14px;
         line-height: 23px;
         font-weight: 300;
+}
+
+.card-bg p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #03045E;
+        margin: 0 0 15px;
+}
+
+.card-page {
+        padding-bottom: 50px;
+        width: 90%;
+        margin: 0 auto;
+}
+
+.cover {
+        position: relative;
+        width: 100%;
+        display: flex;
+}
+
+.cover a {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        margin: 0 20px;
+}
+
+.cover h1 {
+        text-align: center;
+        width: 100%;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+        color: #000000
 }

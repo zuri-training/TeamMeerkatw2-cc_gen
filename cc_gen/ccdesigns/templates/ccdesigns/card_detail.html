@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block content %}
+{% include 'nav.html' %}
+<div class="card-container">
+    <div class="card-item">
+        <div class="card-item-img">
+            <img src="{{ design.design_pic.url}}">
+        </div>
+        <div class="comment-count">
+        <p><b>Comments</b>  <img src="{% static 'images/Ellipse.svg' %}" alt="">   {{ comments.count }}</p>
+        </div>
+        <div class="comment-form">
+        {% if request.user.is_authenticated %}
+        <form method="post" style="margin-top: 1.3em;">
+            {% csrf_token %}
+            <img class="img" src="{% static 'images/message-text.svg' %}" alt="">
+            <input type="textarea" name="body" placeholder="Leave a comment">
+        </form>
+        {% endif %}
+        </div>
+        <div class="comment-section">
+        {% if not comments %}
+            <P><b>No comment</b><p>
+        {% else %}
+            {% for comment in comments  %}
+            <div class="comment">
+                <div>
+                <img class="avatar" src="{{ comment.user.profile.image.url}}" alt="">
+                </div>
+                <div>
+                <a style="text-decoration: none;color: #000000;" href="{% url 'profile-page' comment.user.id %}"><p style="font-weight: 600; font-size: 24px; line-height: 28px;"><b>@{{comment.user}}</b></p></a>
+                <small style="font-size: 10px; font-weight: 400; line-height: 12px;" >{{comment.created | timesince}} ago</small>
+                <p style="margin-top: 10px;  font-weight: 400; line-height: 19px;">{{comment.body}}<p>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+    <div class="card-item">
+        <div class="card-item-text">
+            <h3> {{design.design_name}}</h3>
+            <p><b>Description</b></p>
+            <p>This a credit card design format that can be used for any project and there are different colours you can change it too before downloading.</p>
+
+            <div class="download-btn">
+                <img alt='' src="{% static 'images/download-icon.svg' %}"><a href="">Click Here to Download Design</a>
+            </div>
+            <p><a style="text-decoration: none; color: #000000" href="{% url 'card-design' %}"><b>Explore Other Designs</b></p>
+            {% for x in designs %}
+            <div class="explore">
+                <a href="{% url 'card_detail' x.id %}"><img src="{{ x.design_pic.url }}"></a>
+                <p>{{x.design_name}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+{% endblock content %}

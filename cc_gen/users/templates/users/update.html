@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% include 'nav.html' %}
+    <div class="edit-profile-container">
+        <div class="edit-profile">
+            <img class="avatar"  style="width:200px; height: 200px;" src="{{ user.profile.image.url}}">
+
+            <form class="update-form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in u_form  %}
+                <div class="input-field">
+                    <label>{{field.label}}:</label>
+                    {{field}}
+                </div>
+                {% endfor %}
+                {% for field in p_form %}
+                
+                <div class="input-field">
+                <label>{{field.label}}:</label>
+                {{field}}
+                </div>
+                {% endfor %}
+                <input type="submit" value="Update">
+            </form>
+        </div>
+    </div>
+
+{% include 'footer.html' %}
+{% endblock content %}

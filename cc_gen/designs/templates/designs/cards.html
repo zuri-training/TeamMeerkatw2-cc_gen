@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load static %}
+<style>
+
+</style>
+{% block content %}
+{% include 'nav.html' %}
+    <div class="card-page">
+    <div class="cover">
+        <a href="javascript:history.back()"><img src="{% static 'images/arrow.svg' %}"></a>
+        <h1>Card Designs</h2>
+    </div>
+<div class="cards">
+
+{% for i in design %}
+
+<div style="background-color: #E7EEFF; border-radius: 20px; margin: 15px; padding: 20px 30px 50px" class="card-bg">
+    <p>{{i.design_name}}</p>
+    <a href="{% url 'card_detail' i.id %}">
+        <img class="c_card" style="border-radius: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="{{ i.design_pic.url}}">
+    </a>
+</div>
+{% endfor %}
+
+</div>
+</div>
+
+
+{% include 'footer.html' %}
+{% endblock content %} 

@@ -43,13 +43,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
-    
+
     # Rest framework
     'rest_framework',
-    
+
     # My apps
     'ccdesigns',
     'users',
+    'designs',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                
+
                 'social_django.context_processors.backends',
                 'social_django.context_processors.login_redirect',
             ],
@@ -160,4 +161,3 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '947147053125-uvco3vj9h438q382rvqc8c2eiabdurg7.a
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 LOGIN_REDIRECT_URL = 'home'
-

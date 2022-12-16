@@ -3,9 +3,33 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from designs.models import DesignInfo, Comment
+import mimetypes
 
 # Create your views here.
 
+def card_detail(request, pk):
+    design = DesignInfo.objects.get(id=pk)
+    designs = DesignInfo.objects.all()[3:5]
+    user = request.user
+    comments = design.comment_set.all()
+    
+    if request.method == 'POST':
+        comment = Comment.objects.create(
+            user = request.user,
+            design=design,
+            body = request.POST.get('body'),
+        )
+        return redirect('card_detail', pk=design.id)
+
+
+    context = {
+        'comments': comments,
+        'designs': designs,
+        'design': design,
+        'user': user,
+    }
+    return render(request, 'ccdesigns/card_detail.html', context)
 
 def loginPage(request):
 
@@ -31,7 +55,14 @@ def logoutUSer(request):
 
 
 def homePage(request):
-    return render(request, 'ccdesigns/home.html')
+    design = DesignInfo.objects.all()[:6]
+    user = request.user
+
+    context = {
+        'design': design,
+        'user': user
+    }
+    return render(request, 'ccdesigns/home.html', context)
 
 
 def registerPage(request):
@@ -61,3 +92,21 @@ def registerPage(request):
             messages.info(request, 'Passwords do not match')
     context = {}
     return render(request, 'ccdesigns/register.html', context)
+
+def about_page(request):
+    return render(request, 'ccdesigns/about.html')
+
+def contactPage(request):
+    return render(request, 'ccdesigns/contact.html')
+
+
+# def download_file(request):
+#     # fill these variables with real values
+#     fl_path = '
+#     filename = ‘downloaded_file_name.extension’
+
+#     fl = open(fl_path, 'r’)
+#     mime_type, _ = mimetypes.guess_type(fl_path)
+#     response = HttpResponse(fl, content_type=mime_type)
+#     response['Content-Disposition'] = "attachment; filename=%s" % filename
+#     return response

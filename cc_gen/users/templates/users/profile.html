@@ -4,23 +4,68 @@
 {% block content %}
 
 {% include 'nav.html' %}
-<div>
-    <div>
-    <img class="avatar" src="{{ user.profile.image.url}}"
+<div class="profile-page-wrapper">
+<div class="profile-page-item">
+    <div class="profile-info">
+        <div style="position: relative">
+        {% if request.user == user %}
+        <a href="{% url 'update' %}">Edit Profile</a>
+        {% endif %}
+        </div>
+    <img class="avatar"  style="width:200px; height: 200px;" src="{{ user.profile.image.url}}">
+    
+    <div class="username">
+        <h2>{{user.first_name}} {{user.last_name}}</h2>
+        <i>@{{user.username}}</i>
     </div>
-    <div>
-        <h3>{{user.username}}</h3>
-        <p>{{user.email}}</p>
+    <div class="p-details-container">
+        <p style="font-weight: 700;font-size: 24px;line-height: 23px">Personal Details</p>
+        <div class="p-details">
+            <div class="bd">
+                <P><b>Full Name:</p></b><span>{{user.first_name}} {{user.last_name}}</span>
+            </div>
+            <div class="bd">
+                <P><b>Email Address:</b></p><span>{{user.email}}</span>
+            </div>
+            <div class="bd">
+                <P><b>Contact Number:</b></p><span>{{user.profile.phone_no}}</span>
+            </div class="bd">
+            <div
+            <P><b>Username:</b></p><span>{{user.username}}</span>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
-<div>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{u_form}}
-        {{p_form}}
-        <input type="submit" value="Update">
-    </form>
+<div class="profile-page-item">
+    {% if request.user == user %}
+    <div class="hello-user">
+        <P>hello, {{user.first_name}}</p>
+    </div>
+    {% endif %}
+    <div class="about-me">
+        <p style="font-size: 25px"><b>About Me</b></p>
+        <p>{{user.profile.bio}}</p>
+        {% if request.user == user %}
+        <a href="{% url 'update' %}">Edit About Me</a>
+        {%endif%}
+    </div>
+    <div class="explore-btn">
+    <p><a style="" href="{% url 'card-design' %}"><b>Explore Other Designs</b></a></p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; width:100%" >
+    {% for x in designs %}
+            <div class="explore" style="padding: 0 20px">
+                <a href="{% url 'card_detail' x.id %}"><img  src="{{ x.design_pic.url }}"></a>
+                <p>{{x.design_name}}</p>
+            </div>
+    {% endfor %}
+        </div>
+    
 </div>
+</div>
+
+    {% include 'footer.html' %}
 
 
 {% endblock content %}
